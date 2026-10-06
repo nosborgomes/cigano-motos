@@ -1,0 +1,6 @@
+// Insira o número oficial com código do país e DDD, apenas dígitos. Exemplo de formato: 55 + DDD + número.
+const WHATSAPP_NUMBER = '';
+const message = 'Olá, Cigano Motos! Gostaria de agendar um serviço para minha moto.';
+document.querySelectorAll('[data-whatsapp]').forEach(button=>button.addEventListener('click',()=>{if(WHATSAPP_NUMBER){window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer')}else{document.getElementById('contact').showModal()}}));
+document.getElementById('close-dialog').addEventListener('click',()=>document.getElementById('contact').close());document.getElementById('contact').addEventListener('click',event=>{if(event.target===event.currentTarget){const r=event.currentTarget.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.currentTarget.close()}});document.getElementById('year').textContent=new Date().getFullYear();
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}

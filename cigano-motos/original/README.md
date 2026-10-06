@@ -1,0 +1,1 @@
+HTML original da versão exportada, sem alterações. Para executá-lo isoladamente, copie hero.png e logo-cigano.png de assets/images para esta pasta. O index.html principal já está pronto para uso com arquivos separados.
